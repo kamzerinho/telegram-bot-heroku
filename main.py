@@ -50,10 +50,7 @@ def main():
 
 
     # Start the bot
-    updater.start_webhook(listen="0.0.0.0",
-                          port=int(PORT),
-                          url_path=TOKEN,
-                          webhook_url= 'https://git.heroku.com/telegram-bot-1234.git' + TOKEN )
+    updater.start_polling()
     updater.idle()
 
 
