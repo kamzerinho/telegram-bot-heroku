@@ -1,6 +1,10 @@
 import telegram
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
+import os
+
+TOKEN = os.environ.get('TOKEN')
+PORT = int(os.environ.get('PORT',88))
 
 
 def start(update, context):
@@ -44,7 +48,10 @@ def main():
 
 
     # Start the bot
-    updater.start_polling()
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN,
+                          webhook_url= 'https://telegram-bot-9999.herokuapp.com/' + TOKEN )
     updater.idle()
 
 
