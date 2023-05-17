@@ -4,7 +4,6 @@ from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 import os
 
 TOKEN = os.environ.get('TOKEN')
-PORT = int(os.environ.get('PORT',88))
 
 
 def start(update, context):
