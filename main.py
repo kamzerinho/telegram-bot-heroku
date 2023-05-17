@@ -35,7 +35,7 @@ def main():
     # Set up the bot
     TOKEN = '6055065508:AAERu4d2RYwwTzOI27DufK5lsotLwyQJZXE'
     updater = Updater(TOKEN, use_context=True)
-    dp = updater.dispatcher
+    dispatcher = updater.dispatcher
 
     # Define the start command
     start_handler = CommandHandler('start', start)
