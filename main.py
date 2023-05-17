@@ -1,9 +1,6 @@
 import telegram
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
-import os
-
-TOKEN = os.environ.get('TOKEN')
 
 
 def start(update, context):
@@ -32,11 +29,9 @@ def show_message(update, context):
 
 def main():
     # Set up the bot
-    TOKEN = '6055065508:AAERu4d2RYwwTzOI27DufK5lsotLwyQJZXE'
-    updater = Updater(TOKEN, use_context=True)
+    bot_token = '6055065508:AAERu4d2RYwwTzOI27DufK5lsotLwyQJZXE'
+    updater = Updater(token=bot_token, use_context=True)
     dispatcher = updater.dispatcher
-    updater.start_polling()
-    updater.idle()
 
     # Define the start command
     start_handler = CommandHandler('start', start)
