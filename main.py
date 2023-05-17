@@ -1,5 +1,5 @@
 import telegram
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 import os
 
@@ -53,7 +53,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN,
-                          webhook_url= 'https://telegram-bot-9999.herokuapp.com/' + TOKEN )
+                          webhook_url= 'https://git.heroku.com/telegram-bot-1234.git' + TOKEN )
     updater.idle()
 
 
