@@ -36,6 +36,8 @@ def main():
     TOKEN = '6055065508:AAERu4d2RYwwTzOI27DufK5lsotLwyQJZXE'
     updater = Updater(TOKEN, use_context=True)
     dispatcher = updater.dispatcher
+    updater.start_polling()
+    updater.idle()
 
     # Define the start command
     start_handler = CommandHandler('start', start)
