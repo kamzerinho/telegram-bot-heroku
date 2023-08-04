@@ -5,7 +5,7 @@ from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 
 def start(update, context):
     keyboard = [
-        [InlineKeyboardButton("🌃 Warszawa 🌃", url='https://t.me/+6qm4HJDD2ZkxNDU0'),
+        [InlineKeyboardButton("🌃 Gdynia 🌃", url='https://t.me/+6qm4HJDD2ZkxNDU0'),
          InlineKeyboardButton("🌇 Gdańsk 🌇", url='https://t.me/+6qm4HJDD2ZkxNDU0')],
         [InlineKeyboardButton("🌆 Białystok 🌆", url='https://t.me/+6qm4HJDD2ZkxNDU0'),
          InlineKeyboardButton("🌁 Kraków 🌁", url='https://t.me/+6qm4HJDD2ZkxNDU0')],
