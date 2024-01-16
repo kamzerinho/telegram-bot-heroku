@@ -11,13 +11,14 @@ def start(update, context):
          InlineKeyboardButton("🌁 Kraków 🌁", url='https://t.me/+6qm4HJDD2ZkxNDU0')],
         [InlineKeyboardButton("📞 Zadzwoń 📞", callback_data='call_us')],
         [InlineKeyboardButton("📧 E-mail 📧", url='mailto:info@example.com')],
-        [InlineKeyboardButton("🤖 Dołącz do grupy 🤖", url='https://t.me/+9q9-3vDXm1xkMjc0')]
+        [InlineKeyboardButton("🤖 Dołącz do grupy 🤖", url='https://t.me/+6qm4HJDD2ZkxNDU0')]
         
     ]
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    update.message.reply_text('Wybierz odpowiednią pozycję do kontaktu z nami:', reply_markup=reply_markup)
-    chat_link = 'https://t.me/+9q9-3vDXm1xkMjc0'  # replace with the link to your group
-    chat_id = chat_link.split('/')[-1]  # extract the chat_id from the link
+    
+    # reply_markup = InlineKeyboardMarkup(keyboard)
+    # update.message.reply_text('Wybierz odpowiednią pozycję do kontaktu z nami:', reply_markup=reply_markup)
+    # chat_link = 'https://t.me/+6qm4HJDD2ZkxNDU0'  # replace with the link to your group
+    # chat_id = chat_link.split('/')[-1]  # extract the chat_id from the link
 
 
 def show_message(update, context):
