@@ -5,19 +5,18 @@ from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 
 def start(update, context):
     keyboard = [
-        [InlineKeyboardButton("🌃 Gdynia 🌃", url='https://t.me/+6qm4HJDD2ZkxNDU0'),
-         InlineKeyboardButton("🌇 Gdańsk 🌇", url='https://t.me/+6qm4HJDD2ZkxNDU0')],
-        [InlineKeyboardButton("🌆 Białystok 🌆", url='https://t.me/+6qm4HJDD2ZkxNDU0'),
-         InlineKeyboardButton("🌁 Kraków 🌁", url='https://t.me/+6qm4HJDD2ZkxNDU0')],
-        [InlineKeyboardButton("📞 Zadzwoń 📞", callback_data='call_us')],
-        [InlineKeyboardButton("📧 E-mail 📧", url='mailto:info@example.com')],
-        [InlineKeyboardButton("🤖 Dołącz do grupy 🤖", url='https://t.me/+6qm4HJDD2ZkxNDU0')]
-        
-    ]
+        [InlineKeyboardButton("🌃 Gdynia 🌃", callback_data='join_group'),
+         InlineKeyboardButton("🌇 Gdańsk 🌇", callback_data='join_group')],
+        [InlineKeyboardButton("🌆 Białystok 🌆", callback_data='join_group'),
+         InlineKeyboardButton("🌁 Kraków 🌁", callback_data='join_group')],
+        [InlineKeyboardButton("📧 E-mail 📧", callback_data='join_group')],
+    [InlineKeyboardButton("📞 Zadzwoń 📞", callback_data='call_us')],
+    [InlineKeyboardButton("🤖 Dołącz do grupy 🤖", callback_data='join_group')]
+]
     
-    # reply_markup = InlineKeyboardMarkup(keyboard)
-    # update.message.reply_text('Wybierz odpowiednią pozycję do kontaktu z nami:', reply_markup=reply_markup)
-    # chat_link = 'https://t.me/+6qm4HJDD2ZkxNDU0'  # replace with the link to your group
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    update.message.reply_text('Wybierz odpowiednią pozycję do kontaktu z nami:', reply_markup=reply_markup)
+    # chat_link = 'https://t.me/joinchat/+6qm4HJDD2ZkxNDU0'  # replace with the link to your group
     # chat_id = chat_link.split('/')[-1]  # extract the chat_id from the link
 
 
@@ -26,6 +25,9 @@ def show_message(update, context):
     query.answer()
     if query.data == 'call_us':
         query.message.reply_text('Skontaktuj się z nami +48123456789')
+        
+    if query.data == 'join_group':
+        query.message.reply_text('https://t.me/joinchat/+6qm4HJDD2ZkxNDU0')
 
 
 def main():
